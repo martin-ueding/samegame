@@ -3,8 +3,8 @@
 java := $(wildcard *.java)
 class := $(java:.java=.class)
 
-samegame.jar: manifest.mf $(class) $(properties) bilder level
-	jar -cfm $@ $^
+samegame.jar: manifest.mf $(class)
+	jar -cfm $@ $^ *.class
 
 %.class: %.java
 	javac $<
